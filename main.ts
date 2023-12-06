@@ -5,13 +5,11 @@
  * This program does bluetooth
 */
 
-
 // setup
 basic.clearScreen()
 radio.setGroup(1)
 basic.showIcon(IconNames.Happy)
 basic.pause(1000)
-
 
 // recieve message
 radio.onReceivedString(function (receivedString) {
