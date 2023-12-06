@@ -5,25 +5,25 @@
  * This program does bluetooth
 */
 
-//variable
+// variable
 let distance: number = 0
 
-//setup
+// setup
 basic.clearScreen()
 radio.setGroup(1)
 basic.showIcon(IconNames.Happy)
 basic.pause(1000)
 
 while (true){
-  if (input.buttonIsPressed(Button.A) == true) {
+  if (input.buttonIsPressed(Button.A) === true) {
     basic.clearScreen()
-    //find distance
+    // find distance
     distance = sonar.ping(DigitalPin.P1, DigitalPin.P2, PingUnit.Centimeters)
     if (distance < 6) {
       radio.sendString('Too close! Move over!')
       basic.showIcon(IconNames.Sword)
     }
-    else{
+    else {
       radio.sendString('everything is A-Okay!')
       basic.showIcon(IconNames.Happy)
     }
