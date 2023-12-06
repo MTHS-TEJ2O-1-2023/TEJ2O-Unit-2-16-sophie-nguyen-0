@@ -11,13 +11,13 @@ basic.clearScreen()
 radio.setGroup(1)
 basic.showIcon(IconNames.Happy)
 basic.pause(1000)
+basic.clearScreen()
 
 
-while (true){
-  // recieve message
-  radio.onReceivedString(function (receivedString) {
-    basic.clearScreen()
-    basic.showString(receivedString)
-    basic.showIcon(IconNames.Happy)
-  })
-}
+// recieve message
+radio.onReceivedString(function (receivedString) {
+  basic.clearScreen()
+  basic.showString(receivedString)
+  basic.showIcon(IconNames.Happy)
+})
+
