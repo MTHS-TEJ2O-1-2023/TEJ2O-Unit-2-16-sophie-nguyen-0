@@ -11,7 +11,7 @@ radio.setGroup(1)
 basic.showIcon(IconNames.Happy)
 basic.pause(1000)
 
-// recieve message
+// receive message
 radio.onReceivedString(function (receivedString) {
   basic.clearScreen()
   basic.showString(receivedString)
