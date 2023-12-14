@@ -12,6 +12,10 @@ display.clear
 display.show(Image.HEART)
 sleep(1000)
 
+# setup
+radio.on
+radio.config(group=1)
+
 # Event loop.
 while True:
     display.clear
