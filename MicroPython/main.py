@@ -1,12 +1,26 @@
 """
 Created by: Mr. Coxall
 Created on: Sep 2020
-This module is a Micro:bit MicroPython program
+This module is a Micro:bit MicroPython program does radio messaging
 """
 
 import radio
-import random
 from microbit import *
 
 
-display.scroll("Hello, World!")
+display.clear
+display.show(Image.HEART)
+sleep(1000)
+
+# Event loop.
+while True:
+    display.clear
+
+    # recieves message
+    new_message = radio.receive()
+
+    # displays message
+    display.show(new_message)
+
+    sleep(500)
+    display.show(Image.HEART_SMALL)
