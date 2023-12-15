@@ -1,6 +1,6 @@
 """
-Created by: Mr. Coxall
-Created on: Sep 2020
+Created by: Sophie
+Created on: dec 2023
 This module is a Micro:bit MicroPython program does radio messaging
 """
 
@@ -13,7 +13,7 @@ display.show(Image.HEART)
 sleep(1000)
 
 # setup
-radio.on
+radio.on()
 radio.config(group=1)
 
 # Event loop.
@@ -23,8 +23,16 @@ while True:
     # recieves message
     new_message = radio.receive()
 
-    # displays message
-    display.show(new_message)
+    if new_message == "TOO CLOSE":
+        # displays message
+        display.show("TOO CLOSE")
 
-    sleep(500)
-    display.show(Image.HEART_SMALL)
+    if new_message == "SAFE":
+        # displays message
+        display.show("SAFE")
+
+    else:
+        display.clear
+
+        sleep(500)
+        display.show(Image.HEART_SMALL)
